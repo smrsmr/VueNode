@@ -1,0 +1,42 @@
+{
+  "name": "admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^1.1.0",
+    "apexcharts": "^2.2.2",
+    "axios": "^0.18.0",
+    "echarts": "^4.2.0-rc.2",
+    "element-ui": "^2.4.9",
+    "file-saver": "^2.0.0",
+    "js-xlsx": "^0.8.22",
+    "nprogress": "^0.2.0",
+    "path-to-regexp": "^2.4.0",
+    "script-loader": "^0.7.2",
+    "tinymce": "^4.9.1",
+    "v-charts": "^1.19.0",
+    "vue": "^2.5.17",
+    "vue-apexcharts": "^1.2.6",
+    "vue-axios": "^2.1.4",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-eslint": "^3.1.5",
+    "@vue/cli-service": "^3.1.4",
+    "@vue/eslint-config-prettier": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
