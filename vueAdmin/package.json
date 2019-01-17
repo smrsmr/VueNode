@@ -24,7 +24,6 @@
     "vue": "^2.5.17",
     "vue-apexcharts": "^1.2.6",
     "vue-axios": "^2.1.4",
-    "vue-html5-editor": "^1.1.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "xlsx": "^0.14.1"
@@ -39,6 +38,7 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "vue-html5-editor": "^1.1.1",
     "vue-template-compiler": "^2.5.17"
   }
 }

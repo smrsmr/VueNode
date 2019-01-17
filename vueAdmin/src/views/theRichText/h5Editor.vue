@@ -8,7 +8,7 @@ export default {
   // name: "vue-html5-editor",
   data() {
     return {
-      content: ""
+      content: "vue-html5-editor"
     };
   }
 };
