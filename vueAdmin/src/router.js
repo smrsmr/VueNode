@@ -161,6 +161,12 @@ export const asyncRouterMap = [
         component: () => import("./views/theRichText/tinymce.vue"),
         name: "tinymce",
         meta: { roles: ["admin"], title: "tinymce" }
+      },
+      {
+        path: "html5-editor",
+        component: () => import("./views/theRichText/h5Editor.vue"),
+        name: "h5Editor",
+        meta: { roles: ["admin"], title: "h5Editor" }
       }
     ]
   },

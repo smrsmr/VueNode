@@ -10,6 +10,9 @@ NProgress.configure({ showSpinner: false }); // NProgress Configuration
 // 引入echarts
 import echarts from "echarts";
 Vue.prototype.$echarts = echarts;
+//editor
+import editor from './assets/js/editor.js';
+import 'font-awesome/css/font-awesome.min.css'
 // v-charts
 import VCharts from "v-charts";
 Vue.use(VCharts);
