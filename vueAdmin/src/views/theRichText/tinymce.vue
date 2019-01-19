@@ -8,7 +8,7 @@
 import tinymce from "tinymce/tinymce";
 import "tinymce/themes/modern/theme";
 import Editor from "@tinymce/tinymce-vue";
-import plugins from "./plugins";
+import plugins from "../../assets/js/plugins";
 
 export default {
   name: "tinymceVue",
