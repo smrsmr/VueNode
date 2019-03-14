@@ -8,6 +8,7 @@ import { asyncRouterMap, constantRouterMap } from "../../router";
  */
 function hasPermission(roles, route) {
   if (route.meta && route.meta.roles) {
+    //some方法 一直在找符合条件的值，一旦找到，则不会继续迭代下去。
     return roles.some(role => route.meta.roles.includes(role));
   } else {
     return true;

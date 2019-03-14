@@ -4,8 +4,8 @@
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-// let connection = mongoose.createConnection('mongodb://mongodb:123456@localhost/mongodb', { useNewUrlParser: true });
-let connection = mongoose.createConnection('mongodb://localhost/mongodb', { useNewUrlParser: true });
+let connection = mongoose.createConnection('mongodb://mongodb:123456@localhost/mongodb', { useNewUrlParser: true });
+// let connection = mongoose.createConnection('mongodb://localhost/mongodb', { useNewUrlParser: true });
 
 //设置变量类型
 /**

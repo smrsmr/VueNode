@@ -33,21 +33,6 @@ export const constantRouterMap = [
     ]
   },
   {
-    path: "/Dealers",
-    name: "数据管理",
-    redirect: "noredirect",
-    component: Loyout,
-    meta: { title: "数据管理", icon: "&#xe605;" },
-    children: [
-      {
-        path: "index",
-        component: () => import("./views/dealers/index"),
-        name: "dealers"
-        // meta: {title: 'index'},
-      }
-    ]
-  },
-  {
     path: "/Charts",
     name: "图形管理",
     redirect: "noredirect",
@@ -89,6 +74,22 @@ export default new Router({
 //异步挂载的路由
 //动态需要根据权限加载的路由表
 export const asyncRouterMap = [
+  {
+    path: "/Dealers",
+    name: "数据管理",
+    redirect: "noredirect",
+    component: Loyout,
+    meta: { title: "数据管理", icon: "&#xe605;" },
+    children: [
+      {
+        path: "index",
+        component: () => import("./views/dealers/index"),
+        name: "dealers",
+        meta: { roles: ["admin"] } //页面需要的权限
+        // meta: {title: 'index'},
+      }
+    ]
+  },
   {
     path: "/Manage",
     name: "管理中心",

@@ -13,7 +13,7 @@
 
         <template v-for="child in item.children" >
             <sidebar-item
-            v-if="child.children&&child.children.length>0"
+             v-if="child.children&&child.children.length>0"
             :item="child"
             :key="child.path"
             :base-path="resolvePath(child.path)"
