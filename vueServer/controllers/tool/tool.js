@@ -4,8 +4,8 @@
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-let connection = mongoose.createConnection('mongodb://mongodb:123456@localhost/mongodb', { useNewUrlParser: true });
-// let connection = mongoose.createConnection('mongodb://localhost/mongodb', { useNewUrlParser: true });
+// let connection = mongoose.createConnection('mongodb://mongodb:123456@localhost/mongodb', { useNewUrlParser: true });
+let connection = mongoose.createConnection('mongodb://localhost/mongodb', { useNewUrlParser: true });
 
 //设置变量类型
 /**
@@ -34,11 +34,23 @@ let user = new mongoose.Schema(
 		privilege: Number,
 	}
 );
+let test = new mongoose.Schema(
+	{
+		key: Number,
+		name: String,
+		phone: String,
+		url: String,
+		address: String,
+		date: String
+	}
+);
 let Todo = connection.model('dealers', schema);   //链接经销商表
 let Users = connection.model('users', user);          //链接用户数据表
+let Test = connection.model('tests', test);          //测试数据库
 module.exports = {
 	Todo: Todo,
 	Users: Users,
+	Test: Test,
 	bodyParser: bodyParser,
 	jwt: jwt,
 };
