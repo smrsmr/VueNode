@@ -9,7 +9,7 @@ module.exports = function (app, Ms) {
 		pageSize = req.body.pageSize;
 		pageStart = current * pageSize -pageSize; 
 		Ms.Test.find({}).skip(pageStart).limit(pageSize).exec((err, data) => {
-			if (err) res.json({status:'error',data:err,total: 0 });
+			if (err) throw err;
 			res.json({status:'ok',data:data,total: dataNum.length });
 		});
 	});

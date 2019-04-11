@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * 经销商增删改查模块
  */
