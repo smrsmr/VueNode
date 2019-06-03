@@ -74,8 +74,8 @@ router.beforeEach((to, form, next) => {
 router.afterEach(() => {
 	NProgress.done(); // finish progress bar
 });
-//axios 全局拦截器
 
+//axios 全局拦截器
 axios.interceptors.request.use(
 	config => {
 		// 每次请求时会从localStorage中获取token
