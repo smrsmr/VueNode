@@ -82,7 +82,7 @@ axios.interceptors.request.use(
 		let token = Storage.localGet("token");
 		if (token) {
 			token = token.replace(/'|"/g, ""); // 把token加入到默认请求参数中
-			config.headers.common["Authorization"] = `Bearer ` + token;
+			config.headers.common["Authorization"] = `JSESSIONID ` + token;
 		}
 		return config;
 	},

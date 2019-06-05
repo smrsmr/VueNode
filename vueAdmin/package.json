@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^1.1.0",
-    "apexcharts": "^2.2.2",
     "axios": "^0.18.0",
     "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.9",
@@ -33,12 +32,17 @@
     "@vue/cli-plugin-eslint": "^3.1.5",
     "@vue/cli-service": "^3.1.4",
     "@vue/eslint-config-prettier": "^4.0.0",
+    "add": "^2.0.6",
+    "apexcharts": "^3.7.1",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "vue-html5-editor": "^1.1.1",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "yarn": "^1.16.0"
   }
 }

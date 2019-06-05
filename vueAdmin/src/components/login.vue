@@ -32,12 +32,9 @@
               v-model="ruleForm.pass"
               placeholder="密码"
               autocomplete="off"
-							@keyup.enter.native="submitForm('ruleForm')"
+              @keyup.enter.native="submitForm('ruleForm')"
             ></el-input>
-            <i
-              class="iconfont"
-              @click="showPwd"
-            >
+            <i class="iconfont" @click="showPwd">
               <span v-show="typeIcon">&#xe621;</span>
               <span v-show="!typeIcon">&#xe606;</span>
             </i>
@@ -47,7 +44,8 @@
               type="primary"
               @click="submitForm('ruleForm')"
               style="width:100%;"
-            >Log in</el-button>
+              >Log in</el-button
+            >
           </el-form-item>
         </el-form>
       </section>
@@ -169,6 +167,7 @@ export default {
       caret-color: @cursor;
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px @bg inset !important;
+        box-shadow: 0 0 0px 1000px @bg inset !important;
         -webkit-text-fill-color: @cursor !important;
       }
     }
