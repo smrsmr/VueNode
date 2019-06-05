@@ -83,7 +83,7 @@ export const asyncRouterMap = [
     children: [
       {
         path: "index",
-        component: () => import("./views/dealers/index"),
+        component: () => import("./views/dealers/index"), //路由懒加载
         name: "dealers",
         meta: { roles: ["admin"] } //页面需要的权限
         // meta: {title: 'index'},
