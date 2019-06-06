@@ -165,23 +165,37 @@ export default {
     //撤回
     recallClick(row, index) {
       let { status, typeCode, codeText } = this.tableData[index];
-      status = "已撤回";
-      typeCode = 2;
-      codeText = "编辑";
-      row.status = status;
-      row.typeCode = typeCode;
-      row.codeText = codeText;
+      this.$alert("", "是否撤回?", {
+        confirmButtonText: "撤回",
+        center: true,
+        callback: action => {
+          if (action === "cancel") return;
+          status = "已撤回";
+          typeCode = 2;
+          codeText = "编辑";
+          row.status = status;
+          row.typeCode = typeCode;
+          row.codeText = codeText;
+        }
+      });
       console.log(row);
     },
     //发布
     pushClick(row, index) {
       let { status, typeCode, codeText } = this.tableData[index];
-      status = "已发布";
-      typeCode = 1;
-      codeText = "撤回";
-      row.status = status;
-      row.typeCode = typeCode;
-      row.codeText = codeText;
+      this.$alert("", "是否发布?", {
+        confirmButtonText: "发布",
+        center: true,
+        callback: action => {
+          if (action === "cancel") return;
+          status = "已发布";
+          typeCode = 1;
+          codeText = "撤回";
+          row.status = status;
+          row.typeCode = typeCode;
+          row.codeText = codeText;
+        }
+      });
       console.log(row);
     },
     //保存
