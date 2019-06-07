@@ -7,14 +7,56 @@
     element-loading-background="rgba(255, 255, 255, 0.7)"
   >
     <v-screen v-on:clickGet="clickGet" :currpage="currpage"></v-screen>
-    <el-table :data="list" stripe show-overflow-tooltip="true" style="width: 100%" :height="height">
-      <el-table-column fixed align="center" prop="area" label="地区" width="180"></el-table-column>
-      <el-table-column align="center" prop="prov" label="省份" width="180"></el-table-column>
-      <el-table-column align="center" prop="city" label="城市" width="180"></el-table-column>
-      <el-table-column align="center" prop="code" width="180" label="编码"></el-table-column>
-      <el-table-column align="center" prop="phone" width="180" label="电话"></el-table-column>
-      <el-table-column align="center" prop="name" width="300" label="经销商"></el-table-column>
-      <el-table-column align="center" prop="address" :width="!isUserName ? '' : 200" label="地址"></el-table-column>
+    <el-table
+      :data="list"
+      stripe
+      show-overflow-tooltip="true"
+      style="width: 100%"
+      :height="height"
+    >
+      <el-table-column
+        fixed
+        align="center"
+        prop="area"
+        label="地区"
+        width="180"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="prov"
+        label="省份"
+        width="180"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="city"
+        label="城市"
+        width="180"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="code"
+        width="180"
+        label="编码"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="phone"
+        width="180"
+        label="电话"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="name"
+        width="300"
+        label="经销商"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="address"
+        :width="!isUserName ? '' : 200"
+        label="地址"
+      ></el-table-column>
       <el-table-column label="操作" fixed="right" width="200" v-if="isUserName">
         <template slot-scope="scope">
           <el-button
@@ -22,17 +64,23 @@
             type="primary"
             @click="Edit(scope.$index, scope.row)"
             icon="el-icon-edit"
-          >编辑</el-button>
+            >编辑</el-button
+          >
           <el-button
             size="mini"
             type="danger"
             @click="Delete(scope.$index, scope.row)"
             icon="el-icon-delete"
-          >删除</el-button>
+            >删除</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
-    <mb-page v-bind:allpage="allpage" v-on:clickGet="clickGet" ref="getPage"></mb-page>
+    <mb-page
+      v-bind:allpage="allpage"
+      v-on:clickGet="clickGet"
+      ref="getPage"
+    ></mb-page>
     <el-dialog
       title="编辑"
       :visible.sync="dialogFormVisible"

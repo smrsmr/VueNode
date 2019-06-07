@@ -1,8 +1,8 @@
 <template>
-    <div class="app-container-main">
-        {{message}}
-        <slot :data="data"></slot>
-    </div>
+  <div class="app-container-main">
+    {{ message }}
+    <slot :data="data"></slot>
+  </div>
 </template>
 <script>
 /**

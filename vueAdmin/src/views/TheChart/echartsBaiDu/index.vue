@@ -1,8 +1,8 @@
 <template>
-    <div class="app-echart-main">
-        <h1>{{message}}</h1>
-        <histogram-bar />
-    </div>
+  <div class="app-echart-main">
+    <h1>{{ message }}</h1>
+    <histogram-bar />
+  </div>
 </template>
 <script>
 import histogramBar from "./components/histogramBar";

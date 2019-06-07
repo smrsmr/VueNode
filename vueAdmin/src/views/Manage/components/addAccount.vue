@@ -5,7 +5,8 @@
         type="primary"
         icon="el-icon-circle-plus-outline"
         @click="dialogFormVisible = true"
-      >增加账号</el-button>
+        >增加账号</el-button
+      >
     </el-row>
     <el-dialog
       title="增加账号"
@@ -19,7 +20,11 @@
         <el-form-item label="账号" :label-width="formLabelWidth" prop="name">
           <el-input v-model="form.name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="权限" :label-width="formLabelWidth" prop="privilege">
+        <el-form-item
+          label="权限"
+          :label-width="formLabelWidth"
+          prop="privilege"
+        >
           <el-input v-model="form.privilege" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" :label-width="formLabelWidth" prop="pass">

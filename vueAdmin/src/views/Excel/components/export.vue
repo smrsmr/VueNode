@@ -1,35 +1,73 @@
 <template>
-		<div class="app-export-main">
-			<el-form :inline="true" :model="formData" class="demo-form-inline">
+  <div class="app-export-main">
+    <el-form :inline="true" :model="formData" class="demo-form-inline">
       <el-form-item label="省份:">
-        <el-select v-model="formData.prov" placeholder="省份" clearable @change="setProv" style="width:120px">
-          <el-option v-for="(item,key) in prov" :key="key" :label="item" :value="item"></el-option>
+        <el-select
+          v-model="formData.prov"
+          placeholder="省份"
+          clearable
+          @change="setProv"
+          style="width:120px"
+        >
+          <el-option
+            v-for="(item, key) in prov"
+            :key="key"
+            :label="item"
+            :value="item"
+          ></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="城市:">
-        <el-select v-model="formData.city" placeholder="城市" clearable @change="setCity" style="width:120px">
-          <el-option v-for="(item,key) in cityArr" :key="key" :label="item" :value="item"></el-option>
+        <el-select
+          v-model="formData.city"
+          placeholder="城市"
+          clearable
+          @change="setCity"
+          style="width:120px"
+        >
+          <el-option
+            v-for="(item, key) in cityArr"
+            :key="key"
+            :label="item"
+            :value="item"
+          ></el-option>
         </el-select>
       </el-form-item>
-			<el-form-item label="文件名:">
-				<el-input placeholder="请输入文件名(默认excel-list)" v-model="filename" clearable style="width:340px;" prefix-icon="el-icon-document"/>
-			</el-form-item>
-			<el-form-item label="导出类型:">
-				<el-select v-model="formData.bookType" placeholder="请选择" style="width:120px">
-					<el-option
-						v-for="(item,key) in TypeList"
-						:key="key"
-						:label="item"
-						:value="item">
-					</el-option>
-				</el-select>
-			</el-form-item>
-			<el-form-item label="">
-				 <el-button :loading="downloadLoading" type="primary" icon="el-icon-download" @click="handleDownload">导出Excel</el-button>
-			</el-form-item>
+      <el-form-item label="文件名:">
+        <el-input
+          placeholder="请输入文件名(默认excel-list)"
+          v-model="filename"
+          clearable
+          style="width:340px;"
+          prefix-icon="el-icon-document"
+        />
+      </el-form-item>
+      <el-form-item label="导出类型:">
+        <el-select
+          v-model="formData.bookType"
+          placeholder="请选择"
+          style="width:120px"
+        >
+          <el-option
+            v-for="(item, key) in TypeList"
+            :key="key"
+            :label="item"
+            :value="item"
+          >
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="">
+        <el-button
+          :loading="downloadLoading"
+          type="primary"
+          icon="el-icon-download"
+          @click="handleDownload"
+          >导出Excel</el-button
+        >
+      </el-form-item>
     </el-form>
-		
-		</div>
+  </div>
 </template>
 <script>
 export default {

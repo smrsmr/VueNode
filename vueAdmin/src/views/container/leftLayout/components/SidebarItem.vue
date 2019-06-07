@@ -1,31 +1,31 @@
 <template>
-    <div v-if="hasOneShowingChild(item.children,item)">
-        <el-menu-item :index="resolvePath(onlyOneChild.path)">
-            <i class="iconfont icon" v-html="item.meta.icon"></i>
-            <span slot="title" class="Title">{{item.meta.title}}</span>
-        </el-menu-item>
-    </div>
-    <el-submenu v-else ref="submenu" :index="resolvePath(item.path)">
-        <template slot="title">
-            <i class="iconfont icon" v-html="item.meta.icon"></i>
-            <span class="Title">{{item.meta.title}}</span>
-        </template>
+  <div v-if="hasOneShowingChild(item.children, item)">
+    <el-menu-item :index="resolvePath(onlyOneChild.path)">
+      <i class="iconfont icon" v-html="item.meta.icon"></i>
+      <span slot="title" class="Title">{{ item.meta.title }}</span>
+    </el-menu-item>
+  </div>
+  <el-submenu v-else ref="submenu" :index="resolvePath(item.path)">
+    <template slot="title">
+      <i class="iconfont icon" v-html="item.meta.icon"></i>
+      <span class="Title">{{ item.meta.title }}</span>
+    </template>
 
-        <template v-for="child in item.children" >
-            <sidebar-item
-             v-if="child.children&&child.children.length>0"
-            :item="child"
-            :key="child.path"
-            :base-path="resolvePath(child.path)"
-            />
-            <app-link v-else :to="resolvePath(child.path)" :key="child.name">
-                <el-menu-item :index="resolvePath(child.path)" class="submenu-item"> 
-                    <i class="iconfont icon min" v-html="child.meta.icon"></i>
-                    <span slot="title" class="Title">{{child.meta.title}}</span>
-                </el-menu-item>
-            </app-link>
-        </template>
-    </el-submenu>
+    <template v-for="child in item.children">
+      <sidebar-item
+        v-if="child.children && child.children.length > 0"
+        :item="child"
+        :key="child.path"
+        :base-path="resolvePath(child.path)"
+      />
+      <app-link v-else :to="resolvePath(child.path)" :key="child.name">
+        <el-menu-item :index="resolvePath(child.path)" class="submenu-item">
+          <i class="iconfont icon min" v-html="child.meta.icon"></i>
+          <span slot="title" class="Title">{{ child.meta.title }}</span>
+        </el-menu-item>
+      </app-link>
+    </template>
+  </el-submenu>
 </template>
 <script>
 // 侧边栏组件

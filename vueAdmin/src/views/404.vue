@@ -1,22 +1,35 @@
 <template>
-    <div class="Error">
-        <div class="Error_main">
-            <div class="Error_left">
-                <img src="../assets/img/404.png" alt="">
-            </div>
-            <div class="Error_right">
-                <p class="Error_right_oops">OOPS!</p>
-                <p class="Error_right_info">
-                    版权所有<a href="https://wallstreetcn.com/" target="_blank" class="link_type">华尔街见闻</a>
-                </p>
-                <p class="Error_right_headline">网管说这个页面你不能进......</p>
-                <p class="Error_right_check">请检查您输入的网址是否正确，请点击以下按钮返回主页或者发送错误报告</p>
-                <el-row>
-                    <el-button type="primary" round @click="return_Home" class="return_Home">返回首页</el-button>
-                </el-row>
-            </div>
-        </div>
+  <div class="Error">
+    <div class="Error_main">
+      <div class="Error_left">
+        <img src="../assets/img/404.png" alt="" />
+      </div>
+      <div class="Error_right">
+        <p class="Error_right_oops">OOPS!</p>
+        <p class="Error_right_info">
+          版权所有<a
+            href="https://wallstreetcn.com/"
+            target="_blank"
+            class="link_type"
+            >华尔街见闻</a
+          >
+        </p>
+        <p class="Error_right_headline">网管说这个页面你不能进......</p>
+        <p class="Error_right_check">
+          请检查您输入的网址是否正确，请点击以下按钮返回主页或者发送错误报告
+        </p>
+        <el-row>
+          <el-button
+            type="primary"
+            round
+            @click="return_Home"
+            class="return_Home"
+            >返回首页</el-button
+          >
+        </el-row>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 export default {

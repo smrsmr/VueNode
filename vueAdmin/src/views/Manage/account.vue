@@ -1,18 +1,33 @@
 <template>
   <div class="app-container-main">
     <section class="app-container-head">
-        <add-account />
+      <add-account />
     </section>
-    <el-table 
-    :data="list" 
-    stripe 
-    show-overflow-tooltip="true" 
-    style="width: 100%"
-    :default-sort = "{prop: 'privilege', order: 'ascending'}"
+    <el-table
+      :data="list"
+      stripe
+      show-overflow-tooltip="true"
+      style="width: 100%"
+      :default-sort="{ prop: 'privilege', order: 'ascending' }"
     >
-      <el-table-column align="center" prop="name" label="账号" width="280"></el-table-column>
-      <el-table-column align="center" prop="privilege" label="权限" sortable width="280"></el-table-column>
-      <el-table-column align="center" prop="pass" label="密码"></el-table-column>
+      <el-table-column
+        align="center"
+        prop="name"
+        label="账号"
+        width="280"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="privilege"
+        label="权限"
+        sortable
+        width="280"
+      ></el-table-column>
+      <el-table-column
+        align="center"
+        prop="pass"
+        label="密码"
+      ></el-table-column>
       <el-table-column label="操作" fixed="right" width="200">
         <template slot-scope="scope">
           <el-button
@@ -20,13 +35,15 @@
             type="primary"
             @click="Edit(scope.$index, scope.row)"
             icon="el-icon-edit"
-          >编辑</el-button>
+            >编辑</el-button
+          >
           <el-button
             size="mini"
             type="danger"
             @click="Delete(scope.$index, scope.row)"
             icon="el-icon-delete"
-          >删除</el-button>
+            >删除</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -42,7 +59,11 @@
         <el-form-item label="账号" :label-width="formLabelWidth" prop="name">
           <el-input v-model="form.name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="权限" :label-width="formLabelWidth" prop="privilege">
+        <el-form-item
+          label="权限"
+          :label-width="formLabelWidth"
+          prop="privilege"
+        >
           <el-input v-model="form.privilege" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" :label-width="formLabelWidth" prop="pass">

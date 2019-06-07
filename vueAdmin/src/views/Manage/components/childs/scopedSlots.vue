@@ -1,4 +1,3 @@
-
 <script>
 /**
  * 作用域插槽（获取子组件数据）
@@ -27,5 +26,4 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

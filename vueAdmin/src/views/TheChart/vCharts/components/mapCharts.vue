@@ -1,5 +1,10 @@
 <template>
-  <ve-map :data="chartData" width="500px" :settings="chartSettings" :events="chartEvents"></ve-map>
+  <ve-map
+    :data="chartData"
+    width="500px"
+    :settings="chartSettings"
+    :events="chartEvents"
+  ></ve-map>
 </template>
 
 <script>

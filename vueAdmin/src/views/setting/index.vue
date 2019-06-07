@@ -1,13 +1,13 @@
 <template>
-    <div class="setting">
-        <h1>{{name}}</h1>
-				<br />
-				<div class="input">
-					<input type="text" v-model="value">
-				</div>
-				<br />
-				<el-button type="primary" @click="send">发送消息</el-button>
+  <div class="setting">
+    <h1>{{ name }}</h1>
+    <br />
+    <div class="input">
+      <input type="text" v-model="value" />
     </div>
+    <br />
+    <el-button type="primary" @click="send">发送消息</el-button>
+  </div>
 </template>
 <script>
 const ws = new WebSocket("ws://127.0.0.1:8080/websocket");
@@ -29,7 +29,7 @@ export default {
       //发送给服务端
       // ws.send("from client: vue");
     };
-    ws.onmessage = function(e) {
+    ws.onmessage = function() {
       console.log("ws onmessage");
       // console.log("from server: " + e.data);
     };

@@ -6,7 +6,7 @@
           <span v-show="!isCollapse">&#xe600;</span>
           <span v-show="isCollapse">&#xe60b;</span>
         </i>
-        <breadcrumb class="header-breadcrumb"/>
+        <breadcrumb class="header-breadcrumb" />
         <div>
           <el-dropdown
             class="infoUser"
@@ -20,11 +20,13 @@
               <i class="iconfont">&#xe638;</i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>{{userInfo[0]}}</el-dropdown-item>
-              <el-dropdown-item @click.native="exitUser()">退出登录</el-dropdown-item>
+              <el-dropdown-item>{{ userInfo[0] }}</el-dropdown-item>
+              <el-dropdown-item @click.native="exitUser()"
+                >退出登录</el-dropdown-item
+              >
             </el-dropdown-menu>
           </el-dropdown>
-        </div>     
+        </div>
       </el-header>
     </el-container>
   </div>

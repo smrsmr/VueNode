@@ -1,8 +1,8 @@
 <template>
   <div class="TheChart">
-    <h1>{{message}}</h1>
-    <line-charts/>
-    <map-charts/>
+    <h1>{{ message }}</h1>
+    <line-charts />
+    <map-charts />
   </div>
 </template>
 <script>

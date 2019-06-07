@@ -8,7 +8,8 @@
       :page-sizes="[10, 20, 30, 40]"
       :page-size="currData"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="allpage">
+      :total="allpage"
+    >
     </el-pagination>
   </div>
 </template>

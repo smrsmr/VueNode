@@ -1,7 +1,7 @@
 <template>
   <el-container
     class="sidebar-container leftLayout"
-    :style="{height:height+'px'}"
+    :style="{ height: height + 'px' }"
   >
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu

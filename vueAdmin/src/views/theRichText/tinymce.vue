@@ -1,8 +1,8 @@
 <template>
-    <div class="app-tiny-main">
-      <editor id="tinymce" v-model="tinymceHtml" :init="init"></editor>
-      <div v-html="tinymceHtml" class="editor-content"></div>
-    </div>
+  <div class="app-tiny-main">
+    <editor id="tinymce" v-model="tinymceHtml" :init="init"></editor>
+    <div v-html="tinymceHtml" class="editor-content"></div>
+  </div>
 </template>
 <script>
 import tinymce from "tinymce/tinymce";

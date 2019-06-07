@@ -3,7 +3,7 @@
     <navleft></navleft>
     <div
       class="main-container"
-      v-bind:class="[isCollapse ? containerShow : containerHide ]"
+      v-bind:class="[isCollapse ? containerShow : containerHide]"
     >
       <hea-der></hea-der>
       <maincon></maincon>

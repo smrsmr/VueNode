@@ -5,17 +5,41 @@
   <div>
     <el-form :inline="true" :model="formData" class="demo-form-inline">
       <el-form-item label="省份">
-        <el-select v-model="formData.prov" placeholder="省份" clearable @change="setProv">
-          <el-option v-for="(item,key) in data" :key="key" :label="item" :value="item"></el-option>
+        <el-select
+          v-model="formData.prov"
+          placeholder="省份"
+          clearable
+          @change="setProv"
+        >
+          <el-option
+            v-for="(item, key) in data"
+            :key="key"
+            :label="item"
+            :value="item"
+          ></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="城市">
-        <el-select v-model="formData.city" placeholder="城市" clearable @change="setCity">
-          <el-option v-for="(item,key) in cityArr" :key="key" :label="item" :value="item"></el-option>
+        <el-select
+          v-model="formData.city"
+          placeholder="城市"
+          clearable
+          @change="setCity"
+        >
+          <el-option
+            v-for="(item, key) in cityArr"
+            :key="key"
+            :label="item"
+            :value="item"
+          ></el-option>
         </el-select>
       </el-form-item>
     </el-form>
-    <add-dealer @leaveParent="leaveParent" @resetPage="resetPage" v-if="isUserName" />
+    <add-dealer
+      @leaveParent="leaveParent"
+      @resetPage="resetPage"
+      v-if="isUserName"
+    />
   </div>
 </template>
 <script>

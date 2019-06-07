@@ -1,10 +1,19 @@
 <template>
-<div class="dealers" v-loading.fullscreen.lock="fullscreenLoading"
-       element-loading-text="拼命加载中"
-       element-loading-spinner="el-icon-loading"
-       element-loading-background="rgba(255, 255, 255, 0.7)">
-       <apexchart height="500" type="line" :options="polylineOptions" :series="polylineSeries" ref="polylineChart"></apexchart>
-</div>
+  <div
+    class="dealers"
+    v-loading.fullscreen.lock="fullscreenLoading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(255, 255, 255, 0.7)"
+  >
+    <apexchart
+      height="500"
+      type="line"
+      :options="polylineOptions"
+      :series="polylineSeries"
+      ref="polylineChart"
+    ></apexchart>
+  </div>
 </template>
 <script>
 export default {
@@ -50,5 +59,4 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

@@ -1,14 +1,27 @@
 <template>
-    <div  class="app-chart-main" 
-       v-loading.fullscreen.lock="fullscreenLoading"
-       element-loading-text="拼命加载中"
-       element-loading-spinner="el-icon-loading"
-       element-loading-background="rgba(255, 255, 255, 0.7)"
-    >
-        <h1>{{message}}</h1>
-        <apexchart height="500" type="bar" :options="pillarOptions" :series="pillarSeries" ref="pillarChart"></apexchart>
-        <apexchart height="500" type="donut" :options="rotundityOptions" :series="rotunditySeries" ref="rotundityChart"></apexchart>
-    </div>
+  <div
+    class="app-chart-main"
+    v-loading.fullscreen.lock="fullscreenLoading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(255, 255, 255, 0.7)"
+  >
+    <h1>{{ message }}</h1>
+    <apexchart
+      height="500"
+      type="bar"
+      :options="pillarOptions"
+      :series="pillarSeries"
+      ref="pillarChart"
+    ></apexchart>
+    <apexchart
+      height="500"
+      type="donut"
+      :options="rotundityOptions"
+      :series="rotunditySeries"
+      ref="rotundityChart"
+    ></apexchart>
+  </div>
 </template>
 <script>
 export default {

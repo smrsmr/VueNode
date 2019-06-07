@@ -1,7 +1,11 @@
 <template>
   <div>
-    <vue-html5-editor :content="content" :height="500" @change="getData"></vue-html5-editor>
-</div>
+    <vue-html5-editor
+      :content="content"
+      :height="500"
+      @change="getData"
+    ></vue-html5-editor>
+  </div>
 </template>
 <script>
 export default {
@@ -17,5 +21,4 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

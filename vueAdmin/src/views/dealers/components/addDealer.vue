@@ -1,7 +1,12 @@
 <template>
   <div class="app-addDealers">
     <div class="app-addDealers-main">
-      <el-button type="primary" icon="el-icon-circle-plus-outline" @click="dialogFormVisible = true">添加经销商</el-button>
+      <el-button
+        type="primary"
+        icon="el-icon-circle-plus-outline"
+        @click="dialogFormVisible = true"
+        >添加经销商</el-button
+      >
       <el-dialog
         title="添加经销商"
         :visible.sync="dialogFormVisible"
@@ -26,16 +31,26 @@
           <el-form-item label="电话" :label-width="formLabelWidth" prop="phone">
             <el-input v-model="form.phone" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="经销商" :label-width="formLabelWidth" prop="name">
+          <el-form-item
+            label="经销商"
+            :label-width="formLabelWidth"
+            prop="name"
+          >
             <el-input v-model="form.name" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="地址" :label-width="formLabelWidth" prop="address">
+          <el-form-item
+            label="地址"
+            :label-width="formLabelWidth"
+            prop="address"
+          >
             <el-input v-model="form.address" autocomplete="off"></el-input>
           </el-form-item>
         </el-form>
         <div slot="footer" class="dialog-footer">
           <el-button @click="addCancel('form')">取消添加</el-button>
-          <el-button type="primary" @click="addSave('form')">确定添加</el-button>
+          <el-button type="primary" @click="addSave('form')"
+            >确定添加</el-button
+          >
         </div>
       </el-dialog>
     </div>
