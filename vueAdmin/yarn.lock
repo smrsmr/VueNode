@@ -1940,6 +1940,13 @@ babel-plugin-transform-regenerator@^6.22.0:
   dependencies:
     regenerator-transform "^0.10.0"
 
+babel-plugin-transform-runtime@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  integrity sha1-iEkNRGUC6puOfvsP4J7E2ZR5se4=
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-strict-mode@^6.24.1:
   version "6.24.1"
   resolved "https://registry.npm.taobao.org/babel-plugin-transform-strict-mode/download/babel-plugin-transform-strict-mode-6.24.1.tgz#d5faf7aa578a65bbe591cf5edae04a0c67020758"
@@ -7007,6 +7014,11 @@ pretty-error@^2.0.2:
     renderkid "^2.0.1"
     utila "~0.4"
 
+print-js@^1.0.61:
+  version "1.0.61"
+  resolved "https://registry.yarnpkg.com/print-js/-/print-js-1.0.61.tgz#6e6079f636c04fc34f23fa561f0b8fced32e36d3"
+  integrity sha512-H/GhVZMroI7qqXH+6LrtFacLOcapRIUrcJD4F4BONZFTk6VtmGC2dqQydzW4RYJpfsCxNUg2Tyi7A46zKC3wmQ==
+
 printj@~1.1.0, printj@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/printj/download/printj-1.1.2.tgz#d90deb2975a8b9f600fb3a1c94e3f4c53c78a222"
@@ -8824,6 +8836,13 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-print-yangyang@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-print-yangyang/-/vue-print-yangyang-1.0.3.tgz#a2004bbcd6dfe3d7021a9bc10d01ec0177affb9a"
+  integrity sha512-p+kA+jd3uCcXg86K9tW2+YgyTq2CIOSYrRqCdt187GVLYoVxtzwQvu75DdKuj9+BLMUr0bFmcTHHZUMbCbVsFg==
+  dependencies:
+    babel-plugin-transform-runtime "^6.23.0"
 
 vue-router@^3.0.1:
   version "3.0.6"

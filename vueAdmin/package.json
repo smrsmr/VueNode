@@ -42,6 +42,7 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "print-js": "^1.0.61",
     "vue-html5-editor": "^1.1.1",
     "vue-template-compiler": "^2.5.17",
     "yarn": "^1.16.0"

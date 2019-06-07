@@ -3,6 +3,10 @@ import Vue from "vue";
 import router from "./router";
 import { constantRouterMap } from "./router";
 import axios from "axios";
+//打印插件
+import PrintNb from './assets/js/print/index';
+import Print from './assets/js/print';
+Vue.config.productionTip = false;
 //nprogress
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
@@ -30,6 +34,8 @@ Vue.use(VueApexCharts);
 Vue.component("apexchart", VueApexCharts);
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+Vue.use(Print); 
+Vue.use(PrintNb); 
 // Vue.use(VueAxios, axios);
 //监听路由状态
 router.beforeEach((to, form, next) => {

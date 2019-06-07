@@ -114,6 +114,18 @@ export const asyncRouterMap = [
         component: () => import("./views/Manage/components/page3"),
         name: "page3",
         meta: { roles: ["admin"], title: "page3" } //页面需要的权限
+      },
+      {
+        path: "upload",
+        component: () => import("./views/Manage/components/upload"),
+        name: "upload",
+        meta: { roles: ["admin"], title: "upload" } //页面需要的权限
+      },
+      {
+        path: "print",
+        component: () => import("./views/Manage/components/print"),
+        name: "print",
+        meta: { roles: ["admin"], title: "print" } //页面需要的权限
       }
     ]
   },
