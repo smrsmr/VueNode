@@ -1,5 +1,5 @@
 <template>
-  <div id="print">
+  <div class="print">
     <h1>打印</h1>
     <hr />
     <!-- <div ref="print">
@@ -37,4 +37,8 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.print {
+  padding-left: 20px;
+}
+</style>

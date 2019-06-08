@@ -3,6 +3,7 @@ import Vue from "vue";
 import router from "./router";
 import { constantRouterMap } from "./router";
 import axios from "axios";
+import '@babel/polyfill';
 //打印插件
 import PrintNb from './assets/js/print/index';
 import Print from './assets/js/print';
@@ -30,6 +31,8 @@ import Storage from "./assets/js/Storage";
 import App from "./App.vue";
 import aXioSapi from "./assets/js/api";
 import VueApexCharts from "vue-apexcharts";
+import _ from 'lodash';
+Vue.prototype._ = _;
 Vue.use(VueApexCharts);
 Vue.component("apexchart", VueApexCharts);
 Vue.config.productionTip = false;
