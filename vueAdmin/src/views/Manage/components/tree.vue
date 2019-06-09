@@ -12,7 +12,20 @@
       ref="tree"
     >
     </el-tree>
-    <hr />
+    <el-divider></el-divider>
+    <el-row>
+      <el-col :span="8"
+        ><el-input v-model="input1" placeholder="请输入内容"></el-input>
+        +
+      </el-col>
+      <el-col :span="8"
+        ><el-input v-model="input2" placeholder="请输入内容"></el-input
+        >=</el-col
+      >
+      <el-col :span="8"
+        ><el-input v-model="sum" placeholder="请输入内容"></el-input
+      ></el-col>
+    </el-row>
     <p>
       <el-tag
         v-for="tag in name"
@@ -24,6 +37,19 @@
         {{ tag.label }}
       </el-tag>
     </p>
+    <div style="margin-top: 15px;">
+      <el-input
+        placeholder="请输入内容"
+        v-model="searchValue"
+        class="input-with-select"
+      >
+        <el-button
+          slot="append"
+          icon="el-icon-search"
+          @click="searchClick"
+        ></el-button>
+      </el-input>
+    </div>
   </div>
 </template>
 <script>
@@ -34,6 +60,9 @@ export default {
       filterText: "",
       name: [],
       input: "",
+      searchValue: "",
+      input1: 0,
+      input2: 0,
       data: [
         {
           id: 1,
@@ -83,7 +112,11 @@ export default {
       this.$refs.tree.filter(val);
     }
   },
-
+  computed: {
+    sum() {
+      return parseInt(this.input1) + parseInt(this.input2);
+    }
+  },
   methods: {
     filterNode(value, data) {
       if (!value) return true;
@@ -96,6 +129,9 @@ export default {
     },
     handleClose(tag) {
       this.name.splice(this.name.indexOf(tag), 1);
+    },
+    searchClick() {
+      console.log(this.name);
     }
   }
 };
@@ -123,5 +159,20 @@ export default {
 .el-tree-node__expand-icon.expanded {
   -webkit-transform: rotate(0);
   transform: rotate(0);
+}
+.el-input {
+  width: 300px;
+}
+.input-with-select .el-input-group__prepend {
+  background-color: #fff;
+}
+.el-input__inner:focus {
+  outline: 0;
+  border: 1px solid #dcdfe6;
+}
+.el-icon-search:before {
+  content: "\e60f";
+  font-size: 16px;
+  font-family: iconfont !important;
 }
 </style>
