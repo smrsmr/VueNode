@@ -6,18 +6,29 @@ module.exports = function (app) {
 	const Arrays = [];
 	wss.on('connection', function connection(ws) {
 		console.log('server: receive connection.~~服务器启动!!!');
-			
+		let i = 20;
+		setInterval(() => {
+			let data = [
+				{name: "李四",age:++i}
+			]
+			data = JSON.stringify(data);
+			ws.send(data);
+		}, 1000);
 		ws.on('message', function incoming(message) {
 			//接收客户端传输过来的数据
 			// console.log('server: received: %s', message); 
-			console.log(message);
 			// Arrays.push(message);
 			// const mao = new Map([
 			// 	[react,[]]
 			// ])
 			// console.log(Arrays);
 			if (message) {
-				ws.send(message);
+				let data = JSON.parse(message);
+				data.map(v => {
+					v.age += 1;
+				})
+				data = JSON.stringify(data);
+				ws.send(data);
 			}
 		});
 		ws.on('close', function close() {
