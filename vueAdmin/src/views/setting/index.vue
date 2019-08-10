@@ -6,11 +6,9 @@
       <input type="text" v-model="value" />
     </div>
     <br />
-    <el-button type="primary" @click="send">发送消息</el-button>
   </div>
 </template>
 <script>
-const ws = new WebSocket("ws://127.0.0.1:8080/websocket");
 export default {
   name: "index",
   data() {
@@ -19,38 +17,8 @@ export default {
       value: ""
     };
   },
-  created() {
-    ws.onopen = function() {
-      console.log("ws onopen");
-      // 开启心跳检测，以免一段时间后收不到消息自动失联
-      /* heartbeat_timer = setInterval(function () {
-        _this.keepalive(ws);
-      }, 5000); */
-      //发送给服务端
-      // ws.send("from client: vue");
-    };
-    ws.onmessage = function() {
-      console.log("ws onmessage");
-      // console.log("from server: " + e.data);
-    };
-    ws.onclose = function() {
-      // clearInterval(heartbeat_timer);
-      console.log("ws close");
-    };
-  },
-  methods: {
-    send() {
-      if (this.value === "") {
-        this.$message({
-          message: "请不要发送空消息!!!",
-          type: "warning"
-        });
-        return;
-      }
-      //发送给服务端
-      ws.send(`vue: ${this.value}`);
-    }
-  }
+  created() {},
+  methods: {}
 };
 </script>
 <style lang="less" scoped>

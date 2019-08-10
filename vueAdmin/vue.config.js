@@ -39,7 +39,8 @@ module.exports = {
 		} */
     // webpack-dev-server 相关配置
     config.devServer = {
-      port: 8081
+      port: 8082,
+      public: "0.0.0.0"
     };
   }
 };
