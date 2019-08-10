@@ -57,7 +57,7 @@
         :width="!isUserName ? '' : 200"
         label="地址"
       ></el-table-column>
-      <el-table-column label="操作" fixed="right" width="200" v-if="isUserName">
+      <el-table-column label="操作" fixed="right" width="300" v-if="isUserName">
         <template slot-scope="scope">
           <el-button
             size="mini"
@@ -73,6 +73,20 @@
             icon="el-icon-delete"
             >删除</el-button
           >
+          <el-button
+            v-if="scope.$index != 0"
+            size="mini"
+            :disabled="scope.$index === 0"
+            @click="moveUp(scope.$index, scope.row)"
+            ><i class="el-icon-arrow-up"></i
+          ></el-button>
+          <el-button
+            size="mini"
+            v-if="scope.$index != list.length - 1"
+            :disabled="scope.$index === list.length - 1"
+            @click="moveDown(scope.$index, scope.row)"
+            ><i class="el-icon-arrow-down"></i
+          ></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -182,6 +196,33 @@ export default {
         confirmButtonText: "确定",
         type: "warning"
       });
+    },
+    //上移
+    moveUp(index, row) {
+      var that = this;
+      console.log("上移", index, row);
+      console.log(that.list[index]);
+      if (index > 0) {
+        let upDate = that.list[index - 1];
+        that.list.splice(index - 1, 1);
+        that.list.splice(index, 0, upDate);
+      } else {
+        alert("已经是第一条，不可上移");
+      }
+    },
+
+    //下移
+    moveDown(index, row) {
+      var that = this;
+      console.log("下移", index, row);
+      if (index + 1 === that.list.length) {
+        alert("已经是最后一条，不可下移");
+      } else {
+        console.log(index);
+        let downDate = that.list[index + 1];
+        that.list.splice(index + 1, 1);
+        that.list.splice(index, 0, downDate);
+      }
     },
     //获取分页数据方法
     clickGet: function(currentpage, currData) {
