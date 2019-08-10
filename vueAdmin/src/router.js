@@ -200,7 +200,13 @@ export const asyncRouterMap = [
         path: "index",
         component: () => import("./views/setting/index"),
         name: "setting",
-        meta: { roles: ["华南大区"] } //页面需要的权限
+        meta: { roles: ["华南大区"], title: "index" } //页面需要的权限
+      },
+      {
+        path: "websocket",
+        component: () => import("./views/setting/websocket.vue"),
+        name: "websocket",
+        meta: { roles: ["华南大区"], title: "websocket" } //页面需要的权限
       }
     ]
   },
