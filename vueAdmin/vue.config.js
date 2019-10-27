@@ -15,7 +15,7 @@ let env = process.env.NODE_ENV;
 module.exports = {
   lintOnSave: undefined,
   // 基本路径
-  baseUrl: env === "production" ? "./" : "",
+  publicPath: env === "production" ? "/" : "/",
   //设置打包之后是否打包.map文件
   productionSourceMap: env === "production" ? false : true,
   // 输出文件目录
@@ -28,16 +28,6 @@ module.exports = {
         "@": resolve("src")
       }
     };
-    /* if (env==="production") {
-			config.plugins.push(new CompressionWebpackPlugin({
-					algorithm: 'gzip',
-					test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-					threshold: 10240,
-					minRatio: 0.8
-				})
-			)
-		} */
-    // webpack-dev-server 相关配置
     config.devServer = {
       port: 8082,
       public: "0.0.0.0"

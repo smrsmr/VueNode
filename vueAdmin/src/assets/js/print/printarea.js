@@ -26,7 +26,7 @@ export default class {
     this.write(PrintAreaWindow.doc); // 写入内容
     this.print(PrintAreaWindow);
     this.settings.endCallback();
-    let box = document.getElementById(this.settings.id);
+    // let box = document.getElementById(this.settings.id);
     // if (box) {
     //     box.parentNode.removeChild(box);
     // }
@@ -39,7 +39,7 @@ export default class {
     };
     paWindow.onload = _loaded();
   }
-  write(PADocument, $ele) {
+  write(PADocument) {
     PADocument.open();
     PADocument.write(
       `${this.docType()}<html>${this.getHead()}${this.getBody()}</html>`

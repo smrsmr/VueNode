@@ -53,7 +53,7 @@ export default {
       console.log("ws onopen");
     },
     websocketonerror(e) {
-      console.log("WebSocket连接发生错误");
+      console.log(`WebSocket连接发生错误:${e}`);
     },
     websocketonmessage(e) {
       console.log(e.data);

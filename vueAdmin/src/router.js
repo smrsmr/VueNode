@@ -23,7 +23,10 @@ export const constantRouterMap = [
     name: "首页",
     redirect: "/index/index",
     component: Loyout,
-    meta: { title: "首页", icon: "&#xe659;" },
+    meta: {
+      title: "首页",
+      icon: "&#xe659;"
+    },
     children: [
       {
         path: "index",
@@ -37,25 +40,37 @@ export const constantRouterMap = [
     name: "图形管理",
     redirect: "noredirect",
     component: Loyout,
-    meta: { title: "图形管理", icon: "&#xe608;" },
+    meta: {
+      title: "图形管理",
+      icon: "&#xe608;"
+    },
     children: [
       {
         path: "VueApexCharts",
         component: () => import("./views/TheChart/VueApexCharts/index"),
         name: "VueApexCharts",
-        meta: { title: "VueApex", icon: "&#xe7af;" }
+        meta: {
+          title: "VueApex",
+          icon: "&#xe7af;"
+        }
       },
       {
         path: "echartsBaiDu",
         component: () => import("./views/TheChart/echartsBaiDu/index"),
         name: "echartsBaiDu",
-        meta: { title: "BaiDu", icon: "&#xe7af;" }
+        meta: {
+          title: "BaiDu",
+          icon: "&#xe7af;"
+        }
       },
       {
         path: "vCharts",
         component: () => import("./views/TheChart/vCharts/index.vue"),
         name: "vCharts",
-        meta: { title: "vCharts", icon: "&#xe7af;" }
+        meta: {
+          title: "vCharts",
+          icon: "&#xe7af;"
+        }
       }
     ]
   },
@@ -68,6 +83,8 @@ export const constantRouterMap = [
 ];
 //实例化vue的时候只挂载constantRouter
 export default new Router({
+  mode: "history",
+  base: process.env.BASE_URL,
   routes: constantRouterMap
 });
 
@@ -79,13 +96,18 @@ export const asyncRouterMap = [
     name: "数据管理",
     redirect: "noredirect",
     component: Loyout,
-    meta: { title: "数据管理", icon: "&#xe605;" },
+    meta: {
+      title: "数据管理",
+      icon: "&#xe605;"
+    },
     children: [
       {
         path: "index",
         component: () => import("./views/dealers/index"), //路由懒加载
         name: "dealers",
-        meta: { roles: ["admin"] } //页面需要的权限
+        meta: {
+          roles: ["admin"]
+        } //页面需要的权限
         // meta: {title: 'index'},
       }
     ]
@@ -95,43 +117,66 @@ export const asyncRouterMap = [
     name: "管理中心",
     redirect: "noredirect",
     component: Loyout,
-    meta: { title: "管理中心", icon: "&#xe60a;" }, //页面需要的权限
+    meta: {
+      title: "管理中心",
+      icon: "&#xe60a;"
+    }, //页面需要的权限
     children: [
       {
         path: "account",
         component: () => import("./views/Manage/account"),
         name: "account",
-        meta: { roles: ["admin"], title: "account", icon: " &#xe66d;" } //页面需要的权限
+        meta: {
+          roles: ["admin"],
+          title: "account",
+          icon: " &#xe66d;"
+        } //页面需要的权限
       },
       {
         path: "jxs",
         component: () => import("./views/Manage/components/jxs"),
         name: "jxs",
-        meta: { roles: ["admin"], title: "jxs", icon: "&#xe60e;" } //页面需要的权限
+        meta: {
+          roles: ["admin"],
+          title: "jxs",
+          icon: "&#xe60e;"
+        } //页面需要的权限
       },
       {
         path: "page3",
         component: () => import("./views/Manage/components/page3"),
         name: "page3",
-        meta: { roles: ["admin"], title: "page3" } //页面需要的权限
+        meta: {
+          roles: ["admin"],
+          title: "page3"
+        } //页面需要的权限
       },
       {
         path: "upload",
         component: () => import("./views/Manage/components/upload"),
         name: "upload",
-        meta: { roles: ["admin"], title: "upload" } //页面需要的权限
+        meta: {
+          roles: ["admin"],
+          title: "upload"
+        } //页面需要的权限
       },
       {
         path: "print",
         component: () => import("./views/Manage/components/print"),
         name: "print",
-        meta: { roles: ["admin"], title: "print" } //页面需要的权限
+        meta: {
+          roles: ["admin"],
+          title: "print"
+        } //页面需要的权限
       },
       {
         path: "tree",
         component: () => import("./views/Manage/components/tree"),
         name: "tree",
-        meta: { roles: ["admin"], title: "tree" } //页面需要的权限
+        meta: {
+          roles: ["admin"],
+          title: "tree"
+        } //页面需要的权限
       }
     ]
   },
@@ -140,31 +185,46 @@ export const asyncRouterMap = [
     name: "Excel",
     redirect: "noredirect",
     component: Loyout,
-    meta: { title: "Excel", icon: "&#xe631;" }, //页面需要的权限
+    meta: {
+      title: "Excel",
+      icon: "&#xe631;"
+    }, //页面需要的权限
     children: [
       {
         path: "UploadExcel",
         component: () => import("./views/Excel/excelUpload.vue"),
         name: "UploadExcel",
-        meta: { roles: ["东北大区"], title: "UploadExcel" } //页面需要的权限
+        meta: {
+          roles: ["东北大区"],
+          title: "UploadExcel"
+        } //页面需要的权限
       },
       {
         path: "exportExcel",
         component: () => import("./views/Excel/exportExcel.vue"),
         name: "exportExcel",
-        meta: { roles: ["东北大区"], title: "exportExcel" } //页面需要的权限
+        meta: {
+          roles: ["东北大区"],
+          title: "exportExcel"
+        } //页面需要的权限
       },
       {
         path: "page2",
         component: () => import("./views/Excel/page2.vue"),
         name: "page2",
-        meta: { roles: ["东北大区"], title: "page2" } //页面需要的权限
+        meta: {
+          roles: ["东北大区"],
+          title: "page2"
+        } //页面需要的权限
       },
       {
         path: "page3",
         component: () => import("./views/Excel/page3.vue"),
         name: "page3",
-        meta: { roles: ["东北大区"], title: "page3" } //页面需要的权限
+        meta: {
+          roles: ["东北大区"],
+          title: "page3"
+        } //页面需要的权限
       }
     ]
   },
@@ -173,19 +233,28 @@ export const asyncRouterMap = [
     name: "富文本",
     redirect: "noredirect",
     component: Loyout,
-    meta: { title: "富文本", icon: "&#xe66f;" },
+    meta: {
+      title: "富文本",
+      icon: "&#xe66f;"
+    },
     children: [
       {
         path: "tinymce",
         component: () => import("./views/theRichText/tinymce.vue"),
         name: "tinymce",
-        meta: { roles: ["admin"], title: "tinymce" }
+        meta: {
+          roles: ["admin"],
+          title: "tinymce"
+        }
       },
       {
         path: "html5-editor",
         component: () => import("./views/theRichText/h5Editor.vue"),
         name: "h5Editor",
-        meta: { roles: ["admin"], title: "h5Editor" }
+        meta: {
+          roles: ["admin"],
+          title: "h5Editor"
+        }
       }
     ]
   },
@@ -194,21 +263,34 @@ export const asyncRouterMap = [
     name: "设置",
     redirect: "/setting/index",
     component: Loyout,
-    meta: { title: "设置", icon: "&#xe6cf;" }, //页面需要的权限
+    meta: {
+      title: "设置",
+      icon: "&#xe6cf;"
+    }, //页面需要的权限
     children: [
       {
         path: "index",
         component: () => import("./views/setting/index"),
         name: "setting",
-        meta: { roles: ["华南大区"], title: "index" } //页面需要的权限
+        meta: {
+          roles: ["华南大区"],
+          title: "index"
+        } //页面需要的权限
       },
       {
         path: "websocket",
         component: () => import("./views/setting/websocket.vue"),
         name: "websocket",
-        meta: { roles: ["华南大区"], title: "websocket" } //页面需要的权限
+        meta: {
+          roles: ["华南大区"],
+          title: "websocket"
+        } //页面需要的权限
       }
     ]
   },
-  { path: "*", redirect: "/404", hidden: true }
+  {
+    path: "*",
+    redirect: "/404",
+    hidden: true
+  }
 ];
