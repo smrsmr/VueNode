@@ -1,7 +1,9 @@
 /* eslint-disable */
 import Vue from "vue";
 import router from "./router";
-import { constantRouterMap } from "./router";
+import {
+	constantRouterMap
+} from "./router";
 import axios from "axios";
 import '@babel/polyfill';
 //打印插件
@@ -11,7 +13,9 @@ Vue.config.productionTip = false;
 //nprogress
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
-NProgress.configure({ showSpinner: false }); // NProgress Configuration
+NProgress.configure({
+	showSpinner: false
+}); // NProgress Configuration
 // 引入echarts
 import echarts from "echarts";
 Vue.prototype.$echarts = echarts;
@@ -37,8 +41,8 @@ Vue.use(VueApexCharts);
 Vue.component("apexchart", VueApexCharts);
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
-Vue.use(Print); 
-Vue.use(PrintNb); 
+Vue.use(Print);
+Vue.use(PrintNb);
 // Vue.use(VueAxios, axios);
 //监听路由状态
 router.beforeEach((to, form, next) => {
@@ -52,13 +56,15 @@ router.beforeEach((to, form, next) => {
 			NProgress.done(); // if current page is dashboard will not trigger	afterEach hook, so manually handle it
 		} else {
 			axios
-				.get("http://127.0.0.1:3001/checkUser")
+				.get(`${process.env.VUE_APP_BASEURL}checkUser`)
 				.then(res => {
 					localStorage.setItem("user_name", res.data.msg.name);
 					if (store.getters.userInfo.length == 0) {
 						const roles = [res.data.msg.name]; // note: roles must be a array! such as: ['editor','develop']
 						store.commit("GET_USER", roles);
-						store.dispatch("GenerateRoutes", { roles }).then(() => {
+						store.dispatch("GenerateRoutes", {
+							roles
+						}).then(() => {
 							// 根据 roles 权限生成可访问的路由表
 							router.addRoutes(store.getters.addRouters); // 动态添加可访问路由表
 							//next({ ...to, replace: true }) // hack 方法 确保 addRoutes 已完成 ,set the replace: true so the navigation will not leave a history record
