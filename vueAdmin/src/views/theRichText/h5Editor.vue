@@ -9,6 +9,7 @@
 </template>
 <script>
 export default {
+  name: "h5Editor",
   data() {
     return {
       content: "vue-html5-editor"

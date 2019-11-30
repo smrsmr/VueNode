@@ -78,15 +78,17 @@
             size="mini"
             :disabled="scope.$index === 0"
             @click="moveUp(scope.$index, scope.row)"
-            ><i class="el-icon-arrow-up"></i
-          ></el-button>
+          >
+            <i class="el-icon-arrow-up"></i>
+          </el-button>
           <el-button
             size="mini"
             v-if="scope.$index != list.length - 1"
             :disabled="scope.$index === list.length - 1"
             @click="moveDown(scope.$index, scope.row)"
-            ><i class="el-icon-arrow-down"></i
-          ></el-button>
+          >
+            <i class="el-icon-arrow-down"></i>
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -139,6 +141,7 @@ import Page from "./components/mb";
 import Screen from "./components/screen";
 import { mapGetters } from "vuex";
 export default {
+  name: "dealers",
   data() {
     return {
       name: "经销商组件",

@@ -10,7 +10,11 @@ export const constantRouterMap = [
     path: "/",
     name: "index",
     hidden: true,
-    redirect: "/index/index"
+    redirect: "/index/index",
+    meta: {
+      keepAlive: false,
+      deepth: 0.5
+    }
   },
   {
     path: "/login",
@@ -31,7 +35,11 @@ export const constantRouterMap = [
       {
         path: "index",
         component: () => import("./views/index/index"),
-        name: "index"
+        name: "index",
+        meta: {
+          keepAlive: false,
+          deepth: 0.5
+        }
       }
     ]
   },
@@ -51,7 +59,9 @@ export const constantRouterMap = [
         name: "VueApexCharts",
         meta: {
           title: "VueApex",
-          icon: "&#xe7af;"
+          icon: "&#xe7af;",
+          keepAlive: false,
+          deepth: 0.5
         }
       },
       {
@@ -60,7 +70,9 @@ export const constantRouterMap = [
         name: "echartsBaiDu",
         meta: {
           title: "BaiDu",
-          icon: "&#xe7af;"
+          icon: "&#xe7af;",
+          keepAlive: false,
+          deepth: 0.5
         }
       },
       {
@@ -69,7 +81,9 @@ export const constantRouterMap = [
         name: "vCharts",
         meta: {
           title: "vCharts",
-          icon: "&#xe7af;"
+          icon: "&#xe7af;",
+          keepAlive: false,
+          deepth: 0.5
         }
       }
     ]
@@ -106,9 +120,24 @@ export const asyncRouterMap = [
         component: () => import("./views/dealers/index"), //路由懒加载
         name: "dealers",
         meta: {
-          roles: ["admin"]
-        } //页面需要的权限
-        // meta: {title: 'index'},
+          title: "数据管理",
+          icon: "&#xe605;",
+          roles: ["admin"],
+          keepAlive: true,
+          deepth: 1
+        }
+      },
+      {
+        path: "test",
+        component: () => import("./views/dealers/components/test.vue"), //路由懒加载
+        name: "test",
+        meta: {
+          title: "测试",
+          icon: "&#xe605;",
+          roles: ["admin"],
+          keepAlive: false,
+          deepth: 2
+        }
       }
     ]
   },
@@ -129,7 +158,9 @@ export const asyncRouterMap = [
         meta: {
           roles: ["admin"],
           title: "account",
-          icon: " &#xe66d;"
+          icon: " &#xe66d;",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -139,7 +170,9 @@ export const asyncRouterMap = [
         meta: {
           roles: ["admin"],
           title: "jxs",
-          icon: "&#xe60e;"
+          icon: "&#xe60e;",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -148,7 +181,9 @@ export const asyncRouterMap = [
         name: "page3",
         meta: {
           roles: ["admin"],
-          title: "page3"
+          title: "page3",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -157,7 +192,9 @@ export const asyncRouterMap = [
         name: "upload",
         meta: {
           roles: ["admin"],
-          title: "upload"
+          title: "upload",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -166,7 +203,9 @@ export const asyncRouterMap = [
         name: "print",
         meta: {
           roles: ["admin"],
-          title: "print"
+          title: "print",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -175,7 +214,9 @@ export const asyncRouterMap = [
         name: "tree",
         meta: {
           roles: ["admin"],
-          title: "tree"
+          title: "tree",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       }
     ]
@@ -196,7 +237,9 @@ export const asyncRouterMap = [
         name: "UploadExcel",
         meta: {
           roles: ["东北大区"],
-          title: "UploadExcel"
+          title: "UploadExcel",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -205,7 +248,9 @@ export const asyncRouterMap = [
         name: "exportExcel",
         meta: {
           roles: ["东北大区"],
-          title: "exportExcel"
+          title: "exportExcel",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -214,7 +259,9 @@ export const asyncRouterMap = [
         name: "page2",
         meta: {
           roles: ["东北大区"],
-          title: "page2"
+          title: "page2",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -223,7 +270,9 @@ export const asyncRouterMap = [
         name: "page3",
         meta: {
           roles: ["东北大区"],
-          title: "page3"
+          title: "page3",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       }
     ]
@@ -244,7 +293,9 @@ export const asyncRouterMap = [
         name: "tinymce",
         meta: {
           roles: ["admin"],
-          title: "tinymce"
+          title: "tinymce",
+          keepAlive: false,
+          deepth: 0.5
         }
       },
       {
@@ -253,7 +304,9 @@ export const asyncRouterMap = [
         name: "h5Editor",
         meta: {
           roles: ["admin"],
-          title: "h5Editor"
+          title: "h5Editor",
+          keepAlive: false,
+          deepth: 0.5
         }
       }
     ]
@@ -274,7 +327,9 @@ export const asyncRouterMap = [
         name: "setting",
         meta: {
           roles: ["华南大区"],
-          title: "index"
+          title: "index",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       },
       {
@@ -283,7 +338,9 @@ export const asyncRouterMap = [
         name: "websocket",
         meta: {
           roles: ["华南大区"],
-          title: "websocket"
+          title: "websocket",
+          keepAlive: false,
+          deepth: 0.5
         } //页面需要的权限
       }
     ]
