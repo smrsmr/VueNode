@@ -45,7 +45,7 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "print-js": "^1.0.61",
     "sockjs-client": "^1.3.0",
     "stompjs": "^2.3.3",
