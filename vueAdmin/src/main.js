@@ -46,6 +46,10 @@ Vue.use(PrintNb);
 // Vue.use(VueAxios, axios);
 //监听路由状态
 router.beforeEach((to, form, next) => {
+	// 路由发生变化修改页面title
+	if (to.name) {
+		document.title = to.name;
+	}
 	NProgress.start(); // start progress bar
 	let token = localStorage.getItem("token");
 	let path = to.path;
